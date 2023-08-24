@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu é mano?</title>
+    <style>
+        
+
+        *{
+            padding: 0;
+            margin: 0;
+            border:0;
+            box-sizing: border-box;
+            /* font-family: 'Dancing Script', cursive; */
+            font-size: 35px;
+            
+        }
+
+        .box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: #fff;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 8%;
+            font-size: 25px;
+        
+        }
+
+        .container{
+            /* background: linear-gradient(to right,#FF00FF,deeppink); */
+            background-repeat: no-repeat;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .texto{
+        margin-bottom: 5rem;
+        }
+
+        #btnNao {
+            position: absolute;
+            margin-top: 5rem;
+            margin-left: 5rem;
+            font-size:25px;
+            /* font-family: 'Titillium Web', sans-serif; */
+            cursor: pointer;
+            color: white;
+            background: black;
+            border-radius: 12%;
+            height: 1.3rem;
+            width: 1.6rem;
+            margin-bottom: 3rem;
+            
+        }
+
+        #btnSim{
+            position: absolute;
+            margin-top: 5rem;
+            margin-right: 5rem;
+            font-size: 25px;
+            /* font-family: 'Titillium Web', sans-serif; */
+            cursor: pointer;
+            /* background: #FF00FF; */
+            border-radius: 12%;
+            height: 1.3rem;
+            width: 1.6rem;
+            margin-bottom: 3rem;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+ 
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <label class="texto">Você é gay mano?</label>
+       <button id="btnSim" >  <a href="https://www.youtube.com/watch?v=2MCFwDhoqqc&ab_channel=DreamBurnersOfficial">Sim</a></button>
+        <button id="btnNao">Não</button> 
+    </div>
+
+</div>
+
+    
+    <script>
+        document.getElementById("btnNao").addEventListener("mouseover", function() {
+        var novoTopo = Math.floor(Math.random() * (this.parentNode.offsetHeight - this.offsetHeight));
+        var novoEsquerda = Math.floor(Math.random() * (this.parentNode.offsetWidth - this.offsetWidth));
+        
+        // Verifica se a nova posição ultrapassa os limites da div
+        if (novoTopo + this.offsetTop > this.parentNode.offsetTop + this.parentNode.offsetHeight - this.offsetHeight) {
+        novoTopo = this.parentNode.offsetTop + this.parentNode.offsetHeight - this.offsetHeight - this.offsetTop;
+        }
+        
+        if (novoEsquerda + this.offsetLeft > this.parentNode.offsetLeft + this.parentNode.offsetWidth - this.offsetWidth) {
+        novoEsquerda = this.parentNode.offsetLeft + this.parentNode.offsetWidth - this.offsetWidth - this.offsetLeft;
+        }
+        
+        this.style.top = novoTopo + "px";
+        this.style.left = novoEsquerda + "px";
+    });
+ 
+    </script>   
+</body>
+</html>
